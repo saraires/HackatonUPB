@@ -73,7 +73,7 @@ router.post('/singup', async (req, res) => {
 });
 
 // Consultar perfil
-/*export const perfil = async (req: Request, res: Response) => {
+router.post('/perfil', async (req, res) => {
     const { id } = req.body;
     try {
         const perfil = await Usuario.find({ _id: id });
@@ -81,21 +81,11 @@ router.post('/singup', async (req, res) => {
     } catch (err) {
         res.status(400).send(err);
     }
-};*/
+});
 
-// Editar o agregar saldo
-/*export const editarSaldo = async (req: Request, res: Response) => {
-    const { id, saldo } = req.body;
-    try {
-        const actualizarSaldo = await Usuario.findByIdAndUpdate(id, { $inc: { 'saldo': saldo } });
-        res.send(actualizarSaldo);
-    } catch (err) {
-        res.status(400).send(err);
-    }
-};
 
 // Agregar una imagen al usuario
-export const editarImagen = async (req: Request, res: Response) => {
+router.post('/editarimagen', async (req, res) => {
     const { id, imagen } = req.body;
     try {
         const actualizarImagen = await Usuario.findByIdAndUpdate(id, { $set: { 'imagen': imagen } });
@@ -104,6 +94,6 @@ export const editarImagen = async (req: Request, res: Response) => {
     } catch (err) {
         res.status(400).send(err);
     }
-}*/
+});
 
 module.exports = router;
