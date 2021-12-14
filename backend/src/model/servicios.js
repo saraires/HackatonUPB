@@ -55,6 +55,10 @@ const servicioSchema = new Schema({
     capacidad:{
         type: Number,
         required: true
+    },
+    autor:{
+        type: String,
+        requiered: true
     }
 });
 

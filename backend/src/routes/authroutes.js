@@ -73,7 +73,7 @@ router.post('/singup', async (req, res) => {
 });
 
 // Consultar perfil
-router.post('/perfil', async (req, res) => {
+router.get('/perfil', async (req, res) => {
     const { id } = req.body;
     try {
         const perfil = await Usuario.find({ _id: id });
@@ -83,9 +83,8 @@ router.post('/perfil', async (req, res) => {
     }
 });
 
-
-// Agregar una imagen al usuario
-router.post('/editarimagen', async (req, res) => {
+// Agregar una imagen al usuario --> editar todo el perfil
+router.put('/editarimagen', async (req, res) => {
     const { id, imagen } = req.body;
     try {
         const actualizarImagen = await Usuario.findByIdAndUpdate(id, { $set: { 'imagen': imagen } });
