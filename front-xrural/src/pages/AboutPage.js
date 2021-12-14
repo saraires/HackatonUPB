@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { Fragment } from "react";
+
+//import bootstrap
+
 export default function AboutPage() {
   return (
-    <div>
-      About
-    </div>
-  )
+    <Fragment>
+      <div>About</div>
+      <div>Contenido</div>
+    </Fragment>
+  );
 }
