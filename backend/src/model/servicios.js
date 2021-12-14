@@ -8,7 +8,6 @@ const servicioSchema = new Schema({
     },
     descripcion: {
         type: String,
-        unique: true,
         required: true,
         min: 10
     },

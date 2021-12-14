@@ -4,7 +4,7 @@ const router = Router();
 const Reserva = require('../model/servicios');
 
 // Traer ofertas creadas
-router.get('/', async (req, res) => {
+router.get('/ofertas', async (req, res) => {
     const { id } = req.body; // id del autor
     try {
         const reservas = await Reserva.find({ autor: id });
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 // Ver una oferta
-router.get('/', async (req, res) => {
+router.get('/veroferta', async (req, res) => { // Enviar por params
     const { id } = req.body; // id de la oferta
     try {
         const reserva = await Reserva.findById(id);
@@ -27,7 +27,8 @@ router.get('/', async (req, res) => {
 
 // Crear una oferta
 router.post('/nuevaoferta', async (req, res) => {
-    const { nombre, descripcion, imagen, video, departamento, municipio, direccion, detalleUbicacion, costo, categoria, tags, atributos, capacidad } = req.body;
+    const { nombre, descripcion, video, departamento, municipio, direccion, detalleUbicacion, costo, categoria, tags, atributos, capacidad, autor } = req.body;
+    //imagen,
     const oferta = new Reserva({
         nombre,
         descripcion,
@@ -40,8 +41,9 @@ router.post('/nuevaoferta', async (req, res) => {
         costo,
         categoria,
         tags,
-        atrubutos,
-        capacidad
+        atributos,
+        capacidad,
+        autor
     });
 
     try {
@@ -72,5 +74,8 @@ router.delete('/eliminaroferta', async (req, res) => {
         res.status(400).send(err);
     }
 });
+
+
+
 
 module.exports = router;
