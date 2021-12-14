@@ -1,17 +1,15 @@
 "use strict"
 
-import express from 'express';
+const express = require('express');
 const app = express();
 
-import mongoose from 'mongoose';
-import cors from 'cors';
-import morgan from 'morgan';
+const mongoose = require('mongoose');
+const cors = require('cors');
 
-import authRoute from './routes/routes'
+const authRoute = require('./routes/routes');
 
 // Configuracion
 app.use(cors());
-app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -19,7 +17,7 @@ app.use('/', authRoute);
 
 // Conexión a la base de datos (cluster de Mongo)
 mongoose.connect(
-    'mongodb+srv://sarai:12345@cluster1.jr4tq.mongodb.net/pogar?retryWrites=true&w=majority',
+    'mongodb+srv://SaraiRes:1234@cluster0.5v507.mongodb.net/ecoturismo?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
