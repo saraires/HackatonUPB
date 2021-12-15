@@ -5,16 +5,34 @@
   background-size: cover;
 } */
 
-body {
-  font-family: "Readex Pro", sans-serif;
-}
-
 header {
   background-color: #fff;
 }
 
+.col.buscador {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+/*Home*/
+.banner-home {
+  background-color: #333;
+  /* min-height: 350px; */
+}
+
+.carousel-item {
+  height: 32rem;
+}
+
+.cat_home {
+  display: block;
+  margin-top: 80px;
+}
+
 .categoria_hospedaje {
-  background: url(/img/hospedaje.jpg) no-repeat center center;
+  background: url(/img/hospedaje.jpg) no-repeat center 88%;
   min-height: 290px;
   display: flex;
   vertical-align: bottom;
@@ -24,6 +42,7 @@ header {
 
 .categoria_hospedaje .cat_texto {
   text-align: right;
+  font-weight: 400;
 }
 
 .categoria_hospedaje a.cat {
@@ -46,6 +65,7 @@ header {
 
 .categoria_experiencia .cat_texto {
   text-align: left;
+  font-weight: 400;
 }
 
 .categoria_experiencia a.cat {
@@ -66,4 +86,8 @@ a.cat {
 .cat_texto h2 {
   color: #fff;
   text-decoration: none;
+}
+
+.cat_texto h2 {
+  font-weight: 600;
 }
