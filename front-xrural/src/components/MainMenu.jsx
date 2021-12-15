@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
+
 import "./mainmenu.css";
 
 export default function MainMenu() {
@@ -20,8 +21,8 @@ export default function MainMenu() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item ">
-                <NavLink to="/" className="nav-link">
+              <li className="nav-item home">
+                <NavLink to="/" className="nav-link" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                   Inicio
                 </NavLink>
               </li>
