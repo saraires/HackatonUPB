@@ -5,22 +5,21 @@ export default function HomePage() {
   return (
     <Fragment>
       <div className="container">
-        <h1>Inicio</h1>
         <div className="row">
-          <div className="col categoria_hospedaje bg-light border rounded-3 m-3 text-center shadow-none p-3 mb-5">
-            <NavLink to="/hospedajes">
-              <div class="card">
-                <h2>Hospedaje</h2>
-                <span>Los mas originales</span>
+          <div className="col categoria_experiencia rounded-3 text-center shadow-none m-3 p-0 ">
+            <NavLink to="/experiencias" className={"cat"}>
+              <div class="cat_texto p-3">
+                <h2>Experiencias</h2>
+                <span>Atrevete a vivir</span>
               </div>
             </NavLink>
           </div>
 
-          <div className="col categoria_experiencia bg-light border rounded-3 m-3 text-center shadow-none p-3 mb-5">
-            <NavLink to="/experiencias">
-              <div class="card">
-                <h2>Experiencias</h2>
+          <div className="col categoria_hospedaje rounded-3 text-center shadow-none m-3 p-0 ">
+            <NavLink to="/hospedajes" className={"cat"}>
+              <div class="cat_texto p-3">
                 <span>Los mas originales</span>
+                <h2>Hospedaje</h2>
               </div>
             </NavLink>
           </div>

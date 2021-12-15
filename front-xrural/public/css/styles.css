@@ -1,8 +1,69 @@
+/*font-family: "Readex Pro", sans-serif;*/
+
 /* #root {
   background: url("/img/bg-home.jpg") no-repeat center center;
   background-size: cover;
+} */
+
+body {
+  font-family: "Readex Pro", sans-serif;
 }
 
 header {
   background-color: #fff;
-} */
+}
+
+.categoria_hospedaje {
+  background: url(/img/hospedaje.jpg) no-repeat center center;
+  min-height: 290px;
+  display: flex;
+  vertical-align: bottom;
+  align-items: end;
+  justify-content: end;
+}
+
+.categoria_hospedaje .cat_texto {
+  text-align: right;
+}
+
+.categoria_hospedaje a.cat {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+
+.categoria_experiencia {
+  background: url(/img/experiencias.jpg) no-repeat center center;
+  min-height: 290px;
+  display: flex;
+  vertical-align: top;
+  align-items: start;
+  justify-content: start;
+}
+
+.categoria_experiencia .cat_texto {
+  text-align: left;
+}
+
+.categoria_experiencia a.cat {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+a.cat {
+  text-decoration: none;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.cat_texto,
+.cat_texto h2 {
+  color: #fff;
+  text-decoration: none;
+}
