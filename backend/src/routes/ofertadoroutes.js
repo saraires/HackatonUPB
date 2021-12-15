@@ -1,5 +1,5 @@
-"use strict"
-const { Router } = require('express');
+"use strict";
+const { Router } = require("express");
 const router = Router();
 const Servicio = require('../model/servicios');
 
@@ -130,6 +130,7 @@ router.put('/editaroferta', async (req, res) => {
     }
 });
 
+// Eliminar oferta
 router.delete('/eliminaroferta', async (req, res) => {
     const { id } = req.body;
     try {

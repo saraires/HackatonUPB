@@ -26,4 +26,33 @@ router.get('/categoria/:categoria', async (req, res) => {
     }
 });
 
+// Crear una reserva
+router.post('/reservacion', async (req, res) => {
+    const { ofertante, cliente, idoferta } = req.body;
+    const nuevaReserva = new Clientes({
+        ofertante,
+        cliente,
+        idoferta
+    })
+    try {
+        const saveReserva = await nuevaReserva.save();
+        res.send(saveReserva);
+    } catch (err) {
+        console.log(err)
+        res.status(400).send(err);
+    }
+});
+
+// Consutltar "mis reservas"
+router.get('/misreservas', async (req, res) => {
+    const { id } = req.body;
+    try {
+        const reservas = await Servicio.find({ cliente: id });
+        res.send(reservas);
+    } catch (err) {
+        res.status(400).send(err);
+    }
+});
+
+
 module.exports = router;
