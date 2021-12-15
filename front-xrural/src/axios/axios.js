@@ -1,6 +1,6 @@
-import axios from "axios"
+import axios from "axios";
 
-export default axios.create({baseURL: `http://167.99.119.181:5051`});
+export default axios.create({ baseURL: `http://44.200.170.170:3000/` });
 
 // import axios from '../axios/axios';
 // axios.get('/ruta del back tal cual', {

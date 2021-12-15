@@ -13,12 +13,12 @@ const bucket = gc.bucket('ecoturismo-imagenes')
 
 const { validacionRegistro, validacionLogin } = require('./validationJoi');
 const Usuario = require('../model/usuario');
-const funcion = require ('./ofertadoroutes');
+const funcion = require('./ofertadoroutes');
 
 const claveToken = 'RandomSecretKeyParaElTrabajoBonito';
 
 // Validacion del token
-function tokenValidation(req, res, next){
+function tokenValidation(req, res, next) {
     const token = req.headers.authtoken;
     if (!token) return res.status(401).json('No puedes ingresar');
 
@@ -62,7 +62,7 @@ router.get('/', async (req, res) => {
 
 // Sing Up
 router.post('/singup', async (req, res) => {
-    
+
     // Validacion con Joi
     const { error } = validacionRegistro.validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);

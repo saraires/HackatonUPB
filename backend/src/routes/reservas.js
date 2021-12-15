@@ -8,7 +8,7 @@ const Servicio = require('../model/servicios');
 const jwt = require('jsonwebtoken');
 const claveToken = 'RandomSecretKeyParaElTrabajoBonito';
 
-function tokenValidation(req, res, next){
+function tokenValidation(req, res, next) {
     const token = req.headers.authtoken;
     if (!token) return res.status(401).json('No puedes ingresar');
 

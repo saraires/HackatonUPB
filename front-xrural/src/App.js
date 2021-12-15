@@ -56,7 +56,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<UsersLoginPage />} />
-        <Route path="/register" element={<UsersRegisterPage />} />
+        <Route path="/registro" element={<UsersRegisterPage />} />
         <Route path="/nosotros" element={<AboutPage />} />
         <Route path="/users/*" element={<UserPage />} />
         <Route path="/hospedajes/" element={<HospedajesPage />} />

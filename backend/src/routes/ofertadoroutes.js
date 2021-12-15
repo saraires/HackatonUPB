@@ -13,16 +13,14 @@ const bucket = gc.bucket('ecoturismo-imagenes') // should be your bucket name
 // Validacion del token
 const jwt = require('jsonwebtoken');
 const claveToken = 'RandomSecretKeyParaElTrabajoBonito';
-let idUsuario = "";
 
-function tokenValidation(req, res, next) {
+function tokenValidation(req, res, next){
     const token = req.headers.authtoken;
     if (!token) return res.status(401).json('No puedes ingresar');
 
     try {
         const verificado = jwt.verify(token, claveToken);
         console.log(verificado)
-        idUsuario = verificado;
         res.status(200)
         next();
     } catch (err) {
@@ -72,11 +70,10 @@ router.get('/veroferta', tokenValidation, async (req, res) => { // Enviar por pa
 // Crear una oferta
 router.post('/nuevaoferta', tokenValidation, async (req, res) => {
     const { nombre, descripcion, video, departamento, municipio, direccion, detalleUbicacion, costo, categoria, tags, atributos, capacidad, autor } = req.body;
-    const imagen = await uploadImage(req.file);
+    //¿imagen,
     const oferta = new Servicio({
         nombre,
         descripcion,
-        imagen,
         video,
         departamento,
         municipio,
@@ -101,20 +98,14 @@ router.post('/nuevaoferta', tokenValidation, async (req, res) => {
 
 // Subir una imagen
 router.post('/imagenoferta', async (req, res) => {
-    if (!req.file) {
-        res.status(400).send('No file uploaded.');
-        return;
-    }
-
     try {
+        if (!req.file) {
+            res.status(400).send('No file uploaded.');
+            return;
+        }
+
         const Myfile = req.file;
         const imageUrl = await uploadImage(Myfile);
-
-        const actualizarImagen = await Servicio.findByIdAndUpdate(idUsuario.id, {
-            $set: {
-                imagen: imageUrl
-            }
-        });
 
         res.send(imageUrl);
 
@@ -127,11 +118,6 @@ router.post('/imagenoferta', async (req, res) => {
 // ----------------------   Peticion de imagenes a un bucket en GCP ---------------------
 
 const uploadImage = (file) => new Promise((resolve, reject) => { // ¿Como se envian los archivos?
-    if (!file) {
-        reject('No file uploaded.');
-        next();
-        return;
-    }
 
     const { originalname, buffer } = file
 
