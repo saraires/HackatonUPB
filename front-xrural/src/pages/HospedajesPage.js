@@ -1,8 +1,17 @@
-import React, { Fragment, useState, useEffect } from "react";
-import Axios from "../axios/axios";
+import React, { Fragment } from "react";
+import axios from "../axios/axios";
+import { useState, useEffect } from "react";
 
 export default function HospedajesPage() {
-  
+
+  const [orden, setOrden] = useState([]);
+
+    useEffect(() => {
+        axios.get('/categoria/hospedaje')
+            .then((res) => {
+                setOrden(res.data);
+            });
+    }, []);
 
   var arrprovi = [
     {id:1122,atributos: ["wifi", "lavadora"]},
@@ -11,7 +20,7 @@ export default function HospedajesPage() {
     {id:1155,atributos: ["parqueadero", "aire"]}
   ]
 
-  var arrpreferencias=[] 
+  var arrpreferencias=[]
   var arrfinal = arrprovi
 
   function preferencias(event) {
@@ -44,7 +53,8 @@ export default function HospedajesPage() {
     }
     console.log(arrfinal)
   }
-  var prueba = 678678
+
+  
   
   return (
     <Fragment>
@@ -66,7 +76,18 @@ export default function HospedajesPage() {
         </div>
       </div>
       <div className="container">
-        <div className="col text-center shadow-none p-3 mb-5 bg-light border rounded-3"></div>
+        <div className="col text-center shadow-none p-3 mb-5 bg-light border rounded-3">
+        <tbody className="text-center table-bordered" >
+      {orden.map((item, index) => {
+        return (
+        <tr key={index}>
+        <td width="50%">{item.id}</td>
+        <td width="50%">{item.atributos}</td>
+        </tr>
+        )
+      })}
+    </tbody>
+        </div>
       </div>
     </Fragment>
   );
