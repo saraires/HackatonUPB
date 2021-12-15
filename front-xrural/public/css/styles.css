@@ -5,16 +5,22 @@
   background-size: cover;
 } */
 
-body {
-  font-family: "Readex Pro", sans-serif;
-}
-
 header {
   background-color: #fff;
 }
 
+/*Home*/
+.banner-home {
+  background-color: #333;
+  /* min-height: 350px; */
+}
+
+.carousel-item {
+  height: 32rem;
+}
+
 .categoria_hospedaje {
-  background: url(/img/hospedaje.jpg) no-repeat center center;
+  background: url(/img/hospedaje.jpg) no-repeat center 88%;
   min-height: 290px;
   display: flex;
   vertical-align: bottom;
@@ -46,6 +52,7 @@ header {
 
 .categoria_experiencia .cat_texto {
   text-align: left;
+  font-weight: 400;
 }
 
 .categoria_experiencia a.cat {
@@ -66,4 +73,8 @@ a.cat {
 .cat_texto h2 {
   color: #fff;
   text-decoration: none;
+}
+
+.cat_texto h2 {
+  font-weight: 600;
 }

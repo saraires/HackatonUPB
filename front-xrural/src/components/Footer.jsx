@@ -4,7 +4,7 @@ import "./footer.css";
 export default function Footer() {
   return (
     <Fragment>
-      <footer className="footer mt-auto py-3 bg-light">
+      <footer className="footer py-3">
         <div className="container">
           <span className="text-muted">Pie de página.</span>
         </div>

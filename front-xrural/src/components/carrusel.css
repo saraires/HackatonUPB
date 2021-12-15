@@ -1,0 +1,36 @@
+#myCarousel .carousel-caption h1 {
+  text-shadow: 2px 2px 4px #333;
+}
+
+#myCarousel .carousel-caption p {
+  font-weight: 300;
+  text-shadow: 1px 2px 2px #333;
+}
+
+#myCarousel .carousel-caption a.btn {
+  /* font-weight: 500; */
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #fff;
+  text-shadow: none;
+  color: #333;
+}
+
+#myCarousel .carousel-caption a.btn:hover {
+  background: rgb(255, 255, 255);
+  border-color: #fff;
+}
+
+.ad1 {
+  background: url("../img/slide3.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.ad2 {
+  background: url("../img/slide2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.ad3 {
+  background: url("../img/slide1.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
