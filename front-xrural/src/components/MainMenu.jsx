@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-
 import "./mainmenu.css";
 
 export default function MainMenu() {
@@ -22,28 +21,38 @@ export default function MainMenu() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item home">
-                <NavLink to="/" className="nav-link" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                  Inicio
+                <NavLink to="/" className="nav-link">
+                  <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    Inicio
+                  </span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/nosotros">
-                  Nosotros
+                  <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    Nosotros
+                  </span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/hospedajes">
-                  Hospedajes
+                  <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    Hospedajes
+                  </span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/experiencias">
-                  Experiencias
+                  <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    Experiencias
+                  </span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
-                  Login
+                  <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    Login
+                  </span>
                 </NavLink>
               </li>
             </ul>
