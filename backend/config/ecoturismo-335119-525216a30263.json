@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ecoturismo-335119",
+  "private_key_id": "525216a30263b4f5df1462737f96a615e50bf53f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1dKxCdvgt3JK8\nWyLxR6+FKOk3xaoj8DXy+gqb3aXGe401x8f8pSAWQpk9KtPco0G4z2r9qrPi3NR4\ni+eAfdGDGyhIyPZhGfBch71S0/1kUioQh8uGak3bx0xS0ko2iC7uHaxYXEXcL+C2\n8+69j/RzEma3F+yUC6boFDLjGoiEFdXmRkPU15Tn8JEidM5URGoJ9rod79YziO3+\norVNwZhu4tz0vZFa7IwaELfkS7AOXv2bmVGzdcv4TaT/nR+JNuj6G1B/jfBJ5CS6\nQoN6IwFRkGwPtYsy7gviASZbU3dIKOlUowYMQoR+nN0TW/TYwVnDdcmRsb6KLG5e\nUlf/29grAgMBAAECggEAHCYFxOe8tyyU7Lg8ku5aaY8/ooG804djbxZfx+8Z1ND8\nxl+ABA6/jAR3zhfTNtJykw9GGyS8dBBqu2qElpeuBScU2DmoksaZ1VjPQ0aUc9gV\nI2xVY7wg6NuhWOW7UntMwG6E+k4SHkalFux/WBO5SZKMsZF6BztJgI4FmNpYXBjd\nR3VoTSE3eKhPLKocxBfXSHyPnfMfmD9ps7o01HPlZasyTdpbwQh9Pf/svnN8Q2Wx\nyJZmx7I3iohA2t8Xy9XpZe6lyg2DnMGT0aeqVzR0XQU12+wPTzPZ0FztA5IGavli\nlHpOBBIsQ71CPMFy1ik8CHE+2LRsQEv2LGuE8Tk1oQKBgQD+ElXFeDzmmX/QOgYo\nT4BeJEjVTZA63fyH20H+Mk1V4kLkp80yejYpRmpXQR0vTg8xefS8pvFngQIbpyPG\nLZQj2tQ6zq9UKx6gBy3+Ah+kdnqrDrsiABIY0QcVR88ztSkq6/sBcKO84Hsjr7uQ\nNJIaeb0NfOSVOw1b8wnxb4zqSwKBgQC21T5/OsLHVtf/sl/husT+bglyyF9dzute\nkV6ceX+eyOSDOLCFq+PEc+iViF74cDAKOFN6d9miyDS5wJ90tL7HFxfAf9j9iaV8\nj2/tdLg4v0vR7ARqGTvWWtngUFb6CKxuk6SLEEchNoZluc2Nbm86AhaGksyO4fUf\nIDBhtdYdoQKBgH8Ct3ICC5/TuHtlplJce/WT+fz3y1RCSM25pCHpD5QRihM4d3H2\nekDj/KEl4esWAK5hIyFz61YsvdsJEO8vNdE+wb2sOSXAcIzbSfijIyJaQDRnJtF2\na5WQWRQgU8qrk6rrUQ2FO7VeGvDaFs+eGDO4C/RELRkU7ja7JotVkoJFAoGALo4+\nS8d6sae7eLDDGYelgeQjI8dCAXEfHgWGQfHuPVCKX5+f02nhpbSeFPWUuU5X7UJK\nf3TlRj4UrvgNonoj2i5XLf1gE69pJD6iEaUXA9wyQlIHDb0/L2YS9LuAakqrHb0a\nuQ58DkkEEAMwBEOKrwq5EatvyzJeaH6Z00eqLgECgYEA0kaw/6XWvDJc5ThFpfc3\nzSAjfPOThqytdzouU+JxeaaWb2+FZkNgfwQoIEcbjtjer5jCp9vlEEhVQzwdR0fP\npoZLM8MZJQ/hZO6m6t1VJvfHxKBeQdjdM/OS55I74+YBnpLqMzEMmL0TZNwyIs1r\nHYXzkFh4lxspsr6R6FkyuFo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gcpbucket-ecoturismo@ecoturismo-335119.iam.gserviceaccount.com",
+  "client_id": "107098912445214667599",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gcpbucket-ecoturismo%40ecoturismo-335119.iam.gserviceaccount.com"
+}
