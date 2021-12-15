@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Rutas
 app.use('/', authRoute);
-app.use('/', ofertado);
+app.use('/', ofertado.router);
 app.use('/', clientes);
 
 // Conexión a la base de datos (cluster de Mongo)

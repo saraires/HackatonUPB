@@ -2,10 +2,18 @@
 
 const { Router } = require('express');
 const router = Router();
-const Usuario = require('../model/usuario');
-const { validacionRegistro, validacionLogin } = require('./validationJoi');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
+const bodyParser = require('body-parser');
+const Multer = require('multer');
+const { format } = require('util');
+const gc = require('../../config/');
+const bucket = gc.bucket('ecoturismo-imagenes')
+
+const { validacionRegistro, validacionLogin } = require('./validationJoi');
+const Usuario = require('../model/usuario');
+const funcion = require ('./ofertadoroutes');
 
 const claveToken = 'RandomSecretKeyParaElTrabajoBonito';
 
@@ -84,7 +92,40 @@ router.get('/perfil', async (req, res) => {
     }
 });
 
-// Agregar una imagen al usuario --> editar todo el perfil
+// --------------------------- Configuracion de multer para imagenes ----------------------
+
+const multerMid = Multer({
+    storage: Multer.memoryStorage(),
+    limits: {
+        fileSize: 5 * 1024 * 1024, // no larger than 5mb, you can change as needed.
+    },
+});
+
+router.use(multerMid.single('file'));
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
+
+// ----------------------------------------------------------------------------------------
+
+// Subir una imagen de perfil
+router.post('/fotoperfil', async (req, res) => {
+    try {
+        if (!req.file) {
+            res.status(400).send('No file uploaded.');
+            return;
+        }
+
+        const Myfile = req.file;
+        const imageUrl = await funcion.uploadImage(Myfile);
+
+        res.send(imageUrl);
+
+    } catch (err) {
+        console.log(err);
+        res.status(400).send(err)
+    }
+});
+
 router.put('/editarimagen', async (req, res) => {
     const { id, imagen } = req.body;
     try {
