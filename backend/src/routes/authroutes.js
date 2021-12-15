@@ -17,6 +17,20 @@ const funcion = require ('./ofertadoroutes');
 
 const claveToken = 'RandomSecretKeyParaElTrabajoBonito';
 
+// Validacion del token
+function tokenValidation(req, res, next){
+    const token = req.headers.authtoken;
+    if (!token) return res.status(401).json('No puedes ingresar');
+
+    try {
+        const verificado = jwt.verify(token, claveToken);
+        res.status(200)
+        next();
+    } catch (err) {
+        res.status(400).send('Token invalido');
+    }
+}
+
 // Login
 router.get('/', async (req, res) => {
 
@@ -28,9 +42,9 @@ router.get('/', async (req, res) => {
     const { correo, contraseña } = req.body;
 
     try {
-
         // El correo existe?
         const usuarioValido = await Usuario.findOne({ correo: correo });
+        console.log(usuarioValido)
         if (!usuarioValido) return res.status(400).send('El correo o la contraseña son incorrectos');
 
         // La contraseña si es la correcta?
@@ -39,7 +53,7 @@ router.get('/', async (req, res) => {
 
         // JWT
         const token = jwt.sign({ _id: usuarioValido._id }, claveToken);
-        res.send({ "usuarioValido": usuarioValido, "authToken": token });
+        res.header({ "authToken": token }).json({ "usuarioValido": usuarioValido });
 
     } catch (err) {
         res.status(400).send(err);
@@ -75,14 +89,14 @@ router.post('/singup', async (req, res) => {
         const savedUser = await usuario.save();
         // JWT
         const token = jwt.sign({ _id: savedUser._id }, claveToken);
-        res.send({ "usuarioValido": savedUser, "authToken": token });
+        res.header({ "authToken": token }).json({ "usuarioValido": savedUser });
     } catch (err) {
         res.status(400).send(err);
     };
 });
 
 // Consultar perfil
-router.get('/perfil', async (req, res) => {
+router.get('/perfil', tokenValidation, async (req, res) => {
     const { id } = req.body;
     try {
         const perfil = await Usuario.find({ _id: id });
@@ -126,15 +140,15 @@ router.post('/fotoperfil', async (req, res) => {
     }
 });
 
-router.put('/editarimagen', async (req, res) => {
-    const { id, imagen } = req.body;
+// Editar datos de usuario
+router.put('/editarperfil', tokenValidation, async (req, res) => {
+    const { id } = req.body; // id del usuario
     try {
-        const actualizarImagen = await Usuario.findByIdAndUpdate(id, { $set: { 'imagen': imagen } });
-        console.log(actualizarImagen);
-        res.send(actualizarImagen);
+        const actualizarperfil = await Usuario.findByIdAndUpdate(id, { $set: req.body });
+        res.send(actualizarperfil);
     } catch (err) {
         res.status(400).send(err);
     }
 });
 
-module.exports = router;
+module.exports = router

@@ -18,9 +18,7 @@ export default function HospedajesPage() {
   }
   const [list, setList] = useState([]);
   useEffect(() => {
-    Axios.get({
-      url: "/servicios",
-    })
+    Axios.get("/servicios")
       .then((response) => {
         setList(response.data);
         console.log(response.data);
