@@ -9,7 +9,6 @@ const servicioSchema = new Schema({
     descripcion: {
         type: String,
         required: true,
-        min: 10
     },
     imagen: {
         type: String,
@@ -54,6 +53,10 @@ const servicioSchema = new Schema({
     capacidad:{
         type: Number,
         required: true
+    },
+    galeria:{
+        type: Array,
+        default: []
     },
     autor:{
         type: String,
