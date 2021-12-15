@@ -5,7 +5,7 @@ import "./mainmenu.css";
 export default function MainMenu() {
   return (
     <Fragment>
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-light">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
