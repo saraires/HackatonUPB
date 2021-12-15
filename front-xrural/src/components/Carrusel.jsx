@@ -5,7 +5,7 @@ import "./carrusel.css";
 export default function Carrusel() {
   return (
     <Fragment>
-      <div class="container-fluid p-0">
+      <div className="container-fluid p-0">
         <div id="myCarousel" className="carousel mb-4 slide banner-home" data-bs-ride="carousel">
           <div className="carousel-indicators">
             <button

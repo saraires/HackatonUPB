@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <Fragment>
       <Carrusel />
-      <div className="container">
+      <div className="container cat_home">
         <div className="row">
           <div className="col categoria_experiencia rounded-3 text-center shadow-none m-3 p-0 ">
             <NavLink to="/experiencias" className={"cat"}>

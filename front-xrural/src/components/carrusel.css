@@ -8,29 +8,34 @@
 }
 
 #myCarousel .carousel-caption a.btn {
-  /* font-weight: 500; */
-  background: rgba(255, 255, 255, 0.9);
-  border-color: #fff;
+  font-weight: 500;
+  background: #198754;
   text-shadow: none;
-  color: #333;
+  color: #f9fafb;
+  border: 2px solid #1cd13c;
+  border-radius: 50px;
 }
 
 #myCarousel .carousel-caption a.btn:hover {
-  background: rgb(255, 255, 255);
-  border-color: #fff;
+  background: #fff;
+  color: #198754;
+  border: 2px solid #198754;
 }
 
 .ad1 {
-  background: url("../img/slide3.jpg") no-repeat center center fixed;
+  background: url("../img/slide3.jpg") no-repeat center top;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .ad2 {
-  background: url("../img/slide2.jpg") no-repeat center center fixed;
+  background: url("../img/slide2.jpg") no-repeat center top;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .ad3 {
-  background: url("../img/slide1.jpg") no-repeat center center fixed;
+  background: url("../img/slide1.jpg") no-repeat center top;
   background-size: cover;
+  background-attachment: fixed;
 }

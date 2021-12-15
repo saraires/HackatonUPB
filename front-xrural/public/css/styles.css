@@ -9,6 +9,13 @@ header {
   background-color: #fff;
 }
 
+.col.buscador {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
 /*Home*/
 .banner-home {
   background-color: #333;
@@ -17,6 +24,11 @@ header {
 
 .carousel-item {
   height: 32rem;
+}
+
+.cat_home {
+  display: block;
+  margin-top: 80px;
 }
 
 .categoria_hospedaje {
@@ -30,6 +42,7 @@ header {
 
 .categoria_hospedaje .cat_texto {
   text-align: right;
+  font-weight: 400;
 }
 
 .categoria_hospedaje a.cat {

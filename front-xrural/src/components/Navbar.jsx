@@ -1,14 +1,16 @@
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
+import Buscador from "../components/Buscador";
+import MainMenu from "./MainMenu";
 
 export default function Navbar() {
   return (
     <Fragment>
-      <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
+      <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-1">
         <div className="container">
           <div className="row">
-            <div className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <div className="col-md-3 logo">
               <NavLink to="/">
                 {" "}
                 <img
@@ -21,38 +23,13 @@ export default function Navbar() {
               </NavLink>
             </div>
 
-            <div className="col">
+            <div className="col buscador">
               <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                  <li className="nav-link px-2 text-white">
-                    <NavLink to="/hospedajes" className={({ isActive }) => (isActive ? "active" : "")}>
-                      Hospedajes
-                    </NavLink>
-                  </li>
-                  <li className="nav-link px-2 text-white">
-                    <NavLink to="/experiencias" className={({ isActive }) => (isActive ? "active" : "")}>
-                      Experiencias
-                    </NavLink>
-                  </li>
-                  <li className="nav-link px-2 text-white">
-                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/nosotros">
-                      Nosotros
-                    </NavLink>
-                  </li>
-                </ul>
+                <Buscador />
               </div>
             </div>
-            <div className="col-md-3 text-end">
-              <NavLink to="/users">
-                <button type="button" className="btn btn-outline-primary me-2">
-                  Login
-                </button>
-              </NavLink>
-              <NavLink to="/register">
-                <button type="button" className="btn btn-primary">
-                  Sign-up
-                </button>
-              </NavLink>
+            <div className="col-md-3 menu">
+              <MainMenu />
             </div>
           </div>
         </div>
