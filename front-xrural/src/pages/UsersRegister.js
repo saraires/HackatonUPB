@@ -6,23 +6,23 @@ export default function UsersRegister() {
       <div className="container">
         <h1>Registro</h1>
         <div className="col shadow-none p-3 mb-5 bg-light border rounded-3">
-          <div class="mb-3">
-            <label for="email" class="form-label">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" />
+            <label for="floatingEmail" class="form-label">
               Correo electrónico
             </label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
           </div>
-          <div class="mb-3">
-            <label for="name" class="form-label">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingNombre" placeholder="Nombre" />
+            <label for="floatingNombre" class="form-label">
               Nombre
             </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" />
           </div>
-          <div class="mb-3">
-            <label for="clave" class="form-label">
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPass" placeholder="Clave" />
+            <label for="floatingPass" class="form-label">
               Clave
             </label>
-            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Clave" />
           </div>
           <button type="button" class="btn btn-primary mb-3">
             Registrarme
