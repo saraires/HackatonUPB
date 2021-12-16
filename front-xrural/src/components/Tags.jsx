@@ -45,6 +45,22 @@ const Tags = ({categoria}) => {
 
                             <input type="checkbox" value="relajacion" class="btn-check" name="tag2" id="relajacion" autocomplete="off" />
                             <label class="btn btn-outline-success" for="relajacion">Actividades de relajación  <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+
+                            <input type="checkbox" value="educativas" class="btn-check" name="tag3" id="educativas" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="educativas">Actividades educativas  <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+
+                            <input type="checkbox" value="culturales" class="btn-check" name="tag4" id="culturales" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="culturales">Actividades culturales  <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+
+                            <input type="checkbox" value="eventos" class="btn-check" name="tag5" id="eventos" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="eventos">Eventos  <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+
+                            <input type="checkbox" value="parejas" class="btn-check" name="tag6" id="parejas" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="parejas">Actividades en parejas <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+
+                            <input type="checkbox" value="grupales" class="btn-check" name="tag7" id="grupales" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="grupales">Actividades grupales <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+
                             <br />
                         </div>
                         <div className='float-end'>

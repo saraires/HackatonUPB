@@ -1,5 +1,49 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+<<<<<<< HEAD
+import { useState } from 'react';
+import Swal from 'sweetalert2';
+
+export default function FormPlanes(categoria,tags,atributos){
+
+    const [Checkeados, setCheckeados] = useState(0);
+    const{register,handleSubmit,watch,formState:{errors}}= useForm();
+
+    const onSubmit = data =>{
+        setCheckeados(data);
+        //enviarDatos();
+    }
+
+    let enviarDatos=(e)=>{
+        e.preventDefault();
+        //console.log(Checkeados);
+
+        let datos={
+            tags:categoria.tags,
+            atributos:categoria.atributos,
+            nombre:Checkeados.nombre,
+            descripcion:Checkeados.descripcion,
+            video:Checkeados.video,
+            departamento:Checkeados.departamento,
+            municipio:Checkeados.municipio,
+            direccion:Checkeados.direccion,
+            ubicacion:Checkeados.ubicacion,
+            costo:parseInt(Checkeados.precio),
+            categoria:categoria.categoria,
+            capacidad:parseInt(Checkeados.capacidad),
+            autor:""
+        };
+
+        let options={
+            method:'POST',
+            body:JSON.stringify(datos),
+            headers:{
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        };
+
+        /* let status=addProd(options);//la API
+=======
 import { useState } from "react";
 // import './subirPlanes.css';
 import Swal from "sweetalert2";
@@ -47,6 +91,7 @@ export default function FormPlanes(categoria, tags, atributos) {
     };
 
     /* let status=addProd(options);//la API
+>>>>>>> fc89f3b682f1af86c79623c1bbc4f467a742597e
         status.then((data)=>{
             Swal.fire({
                 position: 'top-end',
