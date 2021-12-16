@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { useState } from 'react';
-import './subirPlanes.css';
 import Swal from 'sweetalert2';
 
 export default function FormPlanes(categoria,tags,atributos){
