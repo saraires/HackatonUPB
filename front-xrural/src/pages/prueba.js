@@ -18,9 +18,9 @@ export default function hola() {
 
     return (
         <div>
-            <div class="input-group">
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
-                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">enviar</button>
+            <div className="input-group">
+                <input type="file" className="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
+                <button className="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">enviar</button>
             </div>
         </div>
     )

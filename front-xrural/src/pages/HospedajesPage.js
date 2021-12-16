@@ -53,10 +53,9 @@ export default function HospedajesPage() {
     }
     console.log(arrfinal)
   }
-<<<<<<< HEAD
   const [list, setList] = useState([]);
   useEffect(() => {
-    Axios.get("/servicios")
+    axios.get("/servicios")
       .then((response) => {
         setList(response.data);
         console.log(response.data);
@@ -65,11 +64,6 @@ export default function HospedajesPage() {
         console.log(error);
       });
   }, [setList]);
-=======
-
-  
-  
->>>>>>> b9c5beb1d2e76035534b9360cac7020e6d9805d6
   return (
     <Fragment>
       <div className="container">

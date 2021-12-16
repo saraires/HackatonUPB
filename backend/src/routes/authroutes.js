@@ -32,7 +32,7 @@ function tokenValidation(req, res, next) {
 }
 
 // Login
-router.get('/', async (req, res) => {
+router.post('/login', async (req, res) => {
 
     // Validacion con Joi
     const { error } = validacionLogin.validate(req.body);
@@ -53,7 +53,7 @@ router.get('/', async (req, res) => {
 
         // JWT
         const token = jwt.sign({ _id: usuarioValido._id }, claveToken);
-        res.header({ "authToken": token }).json({ "usuarioValido": usuarioValido });
+        res.json({ "usuarioValido": usuarioValido, "authToken": token });
 
     } catch (err) {
         res.status(400).send(err);
@@ -89,7 +89,7 @@ router.post('/singup', async (req, res) => {
         const savedUser = await usuario.save();
         // JWT
         const token = jwt.sign({ _id: savedUser._id }, claveToken);
-        res.header({ "authToken": token }).json({ "usuarioValido": savedUser });
+        res.json({ "usuarioValido": savedUser, "authToken": token });
     } catch (err) {
         res.status(400).send(err);
     };
@@ -129,8 +129,11 @@ router.post('/fotoperfil', async (req, res) => {
             return;
         }
 
+        const {id} = req.header.id
+
         const Myfile = req.file;
         const imageUrl = await funcion.uploadImage(Myfile);
+        const fotoperfil = await Usuario.findByIdAndUpdate(id, { $set: req.body });
 
         res.send(imageUrl);
 
