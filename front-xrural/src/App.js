@@ -11,48 +11,24 @@ import UsersRegisterPage from "./pages/UsersRegister";
 import ExperienciasPage from "./pages/ExperienciasPage";
 import HospedajesPage from "./pages/HospedajesPage";
 import UserPage from "./pages/UserPage";
-// import SessionTimeout from "./components/SessionTimeout"
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import DashboardPage from "./pages/DashboardPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Modal from "./components/modal";
 
 
 export default function App() {
-  // let primerTiempo = 0
 
   // useEffect(() => {
-  //   primerTiempo = getPreviousNavTime();
-  // });
-
-  // function getCurrentTime() {
-  //   let hoy = new Date();
-  //   let hora = hoy.getTime;
-  //   console.log(hora);
-  // }
-
-  // function getPreviousNavTime(){
-  //   let hoy = new Date();
-  //   let hora = hoy.getTime;
-  //   console.log(hora);
-  // }
-
-  // function onUserNavigate() {
-  //   let idleTime = getCurrentTime() - primerTiempo;
-  //   console.log(idleTime)
-  //   if (idleTime > 2) {
-  //     localStorage.clear();
-  //     window.location.href = '/';
-  //   }
-  // }
+  //   setInterval(, 1000);
+  // })
 
 
   return (
-    // path="/" onEnter={onUserNavigate} onChange={onUserNavigate}
     <Router>
       <Navbar />
-      {/* <SessionTimeout /> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<UsersLoginPage />} />

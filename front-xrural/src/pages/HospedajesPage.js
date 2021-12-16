@@ -13,12 +13,7 @@ export default function HospedajesPage() {
             });
     }, []);
 
-  var arrprovi = [
-    {id:1122,atributos: ["wifi", "lavadora"]},
-    {id:1133,atributos: ["cocina", "lavadora", "aire"]},
-    {id:1144,atributos: ["aire", "lavadora"]},
-    {id:1155,atributos: ["parqueadero", "aire"]}
-  ]
+  var arrprovi = orden
 
   var arrpreferencias=[]
   var arrfinal = arrprovi
@@ -41,11 +36,7 @@ export default function HospedajesPage() {
         var atribs = arrprovi[i].atributos
         for(var j=0;j<atribs.length;j++){
           var unoauno = atribs[j]
-          if (unoauno===prefesolas){
-            var idid = arrprovi[i].id
-            var siono = arrfinal.find( datoid => datoid.id === idid )
-            console.log(siono)
-            
+          if (unoauno===prefesolas){            
             arrfinal.push(arrprovi[i])
           }
         }
@@ -53,17 +44,6 @@ export default function HospedajesPage() {
     }
     console.log(arrfinal)
   }
-  const [list, setList] = useState([]);
-  useEffect(() => {
-    axios.get("/servicios")
-      .then((response) => {
-        setList(response.data);
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [setList]);
   return (
     <Fragment>
       <div className="container">
@@ -86,15 +66,19 @@ export default function HospedajesPage() {
       <div className="container">
         <div className="col text-center shadow-none p-3 mb-5 bg-light border rounded-3">
         <tbody className="text-center table-bordered" >
-      {orden.map((item, index) => {
-        return (
-        <tr key={index}>
-        <td width="50%">{item.id}</td>
-        <td width="50%">{item.atributos}</td>
-        </tr>
-        )
-      })}
-    </tbody>
+                        {orden.map((item, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td width="10%">{item.nombre}</td>
+                                    <td width="10%">{item.descripcion}</td>
+                                    <td width="10%">{item.departamento}</td>
+                                    <td width="10%">{item.municipio}</td>
+                                    <td width="10%">{item.direccion}</td>
+                                    <td width="10%">{item.detalleUbicacion}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
         </div>
       </div>
     </Fragment>

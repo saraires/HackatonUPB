@@ -46,8 +46,23 @@ const Atributos = ({categoria,tags}) => {
                             <input type="checkbox" value="wifi" className="btn-check" name="atributo2" id="wifi" autocomplete="off" />
                             <label className="btn btn-outline-success" for="wifi">Tiene wifi</label>
     
-                            <input type="checkbox" value="bano" className="btn-check" name="atributo3" id="bano" autocomplete="off" />
-                            <label className="btn btn-outline-success" for="bano">Tiene baño</label>
+                            <input type="checkbox" value="bano" class="btn-check" name="atributo3" id="bano" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="bano">Tiene baño</label>
+
+                            <input type="checkbox" value="bano" class="btn-check" name="atributo4" id="bano" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="bano">Tiene baño</label>
+                            
+                            <input type="checkbox" value="cocina" class="btn-check" name="atributo5" id="cocina" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="cocina">Cocina</label>
+
+                            <input type="checkbox" value="aire" class="btn-check" name="atributo6" id="aire" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="aire">Aire acondicionado</label>
+
+                            <input type="checkbox" value="parqueadero" class="btn-check" name="atributo6" id="parqueadero" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="parqueadero">Parquedero</label>
+
+                            <input type="checkbox" value="lavadora" class="btn-check" name="atributo6" id="lavadora" autocomplete="off" />
+                            <label class="btn btn-outline-success" for="lavadora">Lavadora</label>
                             <br />
                         </div>
                     </div>

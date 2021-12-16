@@ -55,6 +55,14 @@ export default function MainMenu() {
                   </span>
                 </NavLink>
               </li>
+              git st
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/dashboard">
+                  <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    Dashboard
+                  </span>
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
