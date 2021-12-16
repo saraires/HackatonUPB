@@ -5,7 +5,7 @@ import "./mainmenu.css";
 export default function MainMenu() {
   return (
     <Fragment>
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-light">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -52,6 +52,14 @@ export default function MainMenu() {
                 <NavLink className="nav-link" to="/login">
                   <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     Login
+                  </span>
+                </NavLink>
+              </li>
+              git st
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/dashboard">
+                  <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    Dashboard
                   </span>
                 </NavLink>
               </li>
