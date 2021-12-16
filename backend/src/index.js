@@ -32,4 +32,4 @@ mongoose.connect(
     () => console.log('Estas conectado a la base de datos')
 );
 
-app.listen(5001, () => console.log('Servidor corriendo en el puerto 5001'));
+app.listen(3000, () => console.log('Servidor corriendo en el puerto 3000'));

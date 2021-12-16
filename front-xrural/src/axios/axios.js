@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default axios.create({ baseURL: `http://experienciarural.co:5001` });
+export default axios.create({ baseURL: `http://experienciarural.co:3000` });
 
 // import axios from '../axios/axios';
 // axios.get('/ruta del back tal cual', {
