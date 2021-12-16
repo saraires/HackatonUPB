@@ -10,7 +10,7 @@ export default function HomePage() {
         <div className="row">
           <div className="col categoria_experiencia rounded-3 text-center shadow-none m-3 p-0 ">
             <NavLink to="/experiencias" className={"cat"}>
-              <div class="cat_texto p-3">
+              <div className="cat_texto p-3">
                 <h2>Experiencias</h2>
                 <span>Atrevete a vivir</span>
               </div>
@@ -19,7 +19,7 @@ export default function HomePage() {
 
           <div className="col categoria_hospedaje rounded-3 text-center shadow-none m-3 p-0 ">
             <NavLink to="/hospedajes" className={"cat"}>
-              <div class="cat_texto p-3">
+              <div className="cat_texto p-3">
                 <span>Los mas originales</span>
                 <h2>Hospedajes</h2>
               </div>

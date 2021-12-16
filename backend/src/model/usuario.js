@@ -25,6 +25,7 @@ const userSchema = new Schema({
     rol: {
         type: Number,
         required: true,
+        default: 0
     }
 });
 

@@ -60,7 +60,6 @@ export default function HospedajesPage() {
     );
     ReactDOM.render(element, document.getElementById('resfiltrados'));
   }
-
   return (
     <Fragment>
       <div className="container">

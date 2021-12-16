@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
@@ -15,12 +16,19 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import DashboardPage from "./pages/DashboardPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Modal from "./components/modal";
+
 
 export default function App() {
+
+  // useEffect(() => {
+  //   setInterval(, 1000);
+  // })
+
+
   return (
     <Router>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<UsersLoginPage />} />

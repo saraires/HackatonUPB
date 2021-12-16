@@ -40,11 +40,11 @@ const Atributos = ({categoria,tags}) => {
                     <div className='row mt-5'>
                         <label className="float-start">¿Cuáles de estos atributos tiene tu plan? </label>
                         <div className='atributos'>
-                            <input type="checkbox" value="mascotas" class="btn-check" name="atributo1" id="mascotas" autocomplete="off" />
-                            <label class="btn btn-outline-success" for="mascotas">Acepta mascotas</label>
+                            <input type="checkbox" value="mascotas" className="btn-check" name="atributo1" id="mascotas" autocomplete="off" />
+                            <label className="btn btn-outline-success" for="mascotas">Acepta mascotas</label>
     
-                            <input type="checkbox" value="wifi" class="btn-check" name="atributo2" id="wifi" autocomplete="off" />
-                            <label class="btn btn-outline-success" for="wifi">Tiene wifi</label>
+                            <input type="checkbox" value="wifi" className="btn-check" name="atributo2" id="wifi" autocomplete="off" />
+                            <label className="btn btn-outline-success" for="wifi">Tiene wifi</label>
     
                             <input type="checkbox" value="bano" class="btn-check" name="atributo3" id="bano" autocomplete="off" />
                             <label class="btn btn-outline-success" for="bano">Tiene baño</label>

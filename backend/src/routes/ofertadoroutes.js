@@ -10,6 +10,26 @@ const { format } = require('util');
 const gc = require('../../config/');
 const bucket = gc.bucket('ecoturismo-imagenes') // should be your bucket name
 
+// Validacion del token
+const jwt = require('jsonwebtoken');
+const claveToken = 'RandomSecretKeyParaElTrabajoBonito';
+
+function tokenValidation(req, res, next){
+    const token = req.headers.authtoken;
+    if (!token) return res.status(401).json('No puedes ingresar');
+
+    try {
+        const verificado = jwt.verify(token, claveToken);
+        console.log(verificado)
+        res.status(200)
+        next();
+    } catch (err) {
+        console.log(err)
+        res.status(400).send('Token invalido');
+    }
+}
+
+
 // --------------------------- Configuracion de multer para imagenes ----------------------
 
 const multerMid = Multer({
@@ -26,7 +46,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 // ----------------------------------------------------------------------------------------
 
 // Traer ofertas creadas
-router.get('/ofertas', async (req, res) => {
+router.get('/ofertas', tokenValidation, async (req, res) => {
     const { id } = req.body; // id del autor
     try {
         const reservas = await Servicio.find({ autor: id });
@@ -37,7 +57,7 @@ router.get('/ofertas', async (req, res) => {
 });
 
 // Ver una oferta
-router.get('/veroferta', async (req, res) => { // Enviar por params
+router.get('/veroferta', tokenValidation, async (req, res) => { // Enviar por params
     const { id } = req.body; // id de la oferta
     try {
         const reserva = await Servicio.findById(id);
@@ -48,7 +68,7 @@ router.get('/veroferta', async (req, res) => { // Enviar por params
 });
 
 // Crear una oferta
-router.post('/nuevaoferta', async (req, res) => {
+router.post('/nuevaoferta', tokenValidation, async (req, res) => {
     const { nombre, descripcion, video, departamento, municipio, direccion, detalleUbicacion, costo, categoria, tags, atributos, capacidad, autor } = req.body;
     //¿imagen,
     const oferta = new Servicio({
@@ -120,7 +140,7 @@ const uploadImage = (file) => new Promise((resolve, reject) => { // ¿Como se en
 // ----------------------------------------------------------------------------------------
 
 // Editar oferta
-router.put('/editaroferta', async (req, res) => {
+router.put('/editaroferta', tokenValidation, async (req, res) => {
     const { id } = req.body; // id de la oferta
     try {
         const actualizarOferta = await Servicio.findByIdAndUpdate(id, { $set: req.body });
@@ -141,4 +161,4 @@ router.delete('/eliminaroferta', async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = { uploadImage, router }

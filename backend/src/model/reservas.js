@@ -12,7 +12,24 @@ const reservaSchema = new Schema({
     idoferta:{
         type: String,
         required: true
-    }
+    },
+    capacidad: {
+        type: Number,
+        required: true
+    },
+    fecha:[
+        {
+            fechaInicio:{
+                type: Date,
+                required: true
+            },
+            fechaFin: {
+                type: Date,
+                required: true,
+                default: Date.now
+            }
+        }
+    ]
 
 });
 

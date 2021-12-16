@@ -40,8 +40,8 @@ const Tags = ({categoria}) => {
                     <form className="row" onSubmit={handleSubmit(llenarTags)}>
                         <label className="float-start">Selecciona las opciones que más encajen con tu plan </label>
                         <div className='tags'>
-                            <input type="checkbox" value="deporte" class="btn-check" name="tag1" id="deporte" autocomplete="off" />
-                            <label class="btn btn-outline-success" for="deporte">Actividades deportivas    <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+                            <input type="checkbox" value="deporte" className="btn-check" name="tag1" id="deporte" autocomplete="off" />
+                            <label className="btn btn-outline-success" for="deporte">Actividades deportivas    <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
 
                             <input type="checkbox" value="relajacion" class="btn-check" name="tag2" id="relajacion" autocomplete="off" />
                             <label class="btn btn-outline-success" for="relajacion">Actividades de relajación  <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>

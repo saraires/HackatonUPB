@@ -4,6 +4,25 @@ const router = Router();
 const Clientes = require('../model/reservas');
 const Servicio = require('../model/servicios');
 
+// Validacion del token
+const jwt = require('jsonwebtoken');
+const claveToken = 'RandomSecretKeyParaElTrabajoBonito';
+
+function tokenValidation(req, res, next) {
+    const token = req.headers.authtoken;
+    if (!token) return res.status(401).json('No puedes ingresar');
+
+    try {
+        const verificado = jwt.verify(token, claveToken);
+        console.log(verificado)
+        res.status(200)
+        next();
+    } catch (err) {
+        console.log(err)
+        res.status(400).send('Token invalido');
+    }
+}
+
 // Traer todas las ofertas creadas
 router.get('/servicio', async (req, res) => {
     try {
@@ -27,12 +46,14 @@ router.get('/categoria/:categoria', async (req, res) => {
 });
 
 // Crear una reserva
-router.post('/reservacion', async (req, res) => {
-    const { ofertante, cliente, idoferta } = req.body;
+router.post('/reservacion', tokenValidation, async (req, res) => {
+    const { ofertante, cliente, idoferta, capacidad, fecha } = req.body;
     const nuevaReserva = new Clientes({
         ofertante,
         cliente,
-        idoferta
+        idoferta,
+        capacidad,
+        fecha
     })
     try {
         const saveReserva = await nuevaReserva.save();
@@ -44,7 +65,7 @@ router.post('/reservacion', async (req, res) => {
 });
 
 // Consutltar "mis reservas"
-router.get('/misreservas', async (req, res) => {
+router.get('/misreservas', tokenValidation, async (req, res) => {
     const { id } = req.body;
     try {
         const reservas = await Servicio.find({ cliente: id });
