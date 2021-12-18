@@ -35,10 +35,10 @@ const Tags = ({categoria}) => {
 
     //console.log(Tags);
 
-    if(Chekeados == true ){ 
-        return(<Atributos categoria={categoria} tags={Tags}></Atributos>);
-    }else if(Back == true){
+    if(Back == true ){ 
         return(<Categorias></Categorias>);
+    }else if(Chekeados == true){
+        return(<Atributos categoria={categoria} tags={Tags}></Atributos>);
     }else if(categoria == "hospedajes"){ 
         return (
                 <div id="tags" className="container">

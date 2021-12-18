@@ -32,11 +32,10 @@ const Atributos = ({categoria,tags}) => {
         setBack(true);
     }
 
-    if(Chekeados == true ){ //muestra el componente atributos
-        console.log(tags);
-        return(<FormPlanes categoria={categoria} tags={tags} atributos={Atributos}></FormPlanes>);
-    }else if(Back == true){
+    if(Back == true ){ //muestra el componente atributos
         return(<Tags categoria={categoria}></Tags>);
+    }else if(Chekeados == true){
+        return(<FormPlanes categoria={categoria} tags={tags} atributos={Atributos}></FormPlanes>);
     }else if (categoria == "hospedajes"){
         return (
             <div id="atributos" className="container">
