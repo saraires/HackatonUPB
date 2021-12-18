@@ -15,12 +15,11 @@ export default function FormPlanes(categoria, tags, atributos) {
 
   const onSubmit = (data) => {
     setCheckeados(data);
-    //enviarDatos();
+    enviarDatos();
   };
 
+
   let enviarDatos = (e) => {
-    e.preventDefault();
-    //console.log(Checkeados);
 
     let datos = {
       tags: categoria.tags,
@@ -38,13 +37,15 @@ export default function FormPlanes(categoria, tags, atributos) {
       autor: "",
     };
 
-    let options = {
+    alert(JSON.stringify(datos));
+
+    /* let options = {
       method: "POST",
       body: JSON.stringify(datos),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-    };
+    }; */
 
     /* let status=addProd(options);//la API
         status.then((data)=>{
@@ -191,7 +192,7 @@ export default function FormPlanes(categoria, tags, atributos) {
           )}
 
           {/* <button className='btn btn-success btn-sm' onClick={this.enviarDatos} type="button" >Save!</button> */}
-          <input className="btn btn-success btn-sm" type="submit" value="Save!" />
+          <input className="btn btn-success btn-sm mt-4" type="submit" value="Publicar" />
         </div>
       </form>
     </div>

@@ -59,7 +59,7 @@ export default function MainMenu() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/dashboard">
                   <span data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    Dashboard
+                    Quiero publicar un plan turístico
                   </span>
                 </NavLink>
               </li>

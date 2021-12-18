@@ -22,17 +22,18 @@ const Categorias = () => {
             <div id="categorias" className="container">
                 <form className="row" onSubmit={handleSubmit(onSubmit)}>
                     <div className="row justify-content-center">
+                        <h2>Elige una de estas categorías</h2>
                         <div>
                             <input type="radio" value="hospedajes" className="btn-check m-5" name="categoria" id="hospedajes" autocomplete="off" {...register("categorias")}/>
-                            <label className="btn btn-outline-success m-5" for="hospedajes">Hospedajes    <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+                            <label className="btn btn-outline-success m-5" for="hospedajes">Hospedajes    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/308348191.jpg?k=767b22022b0c52e52bb71f030ca1b382266d9eac0b3a76b44dad661233a46a25&o=&hp=1" height="80px" width="80px" /></label>
     
                             <input type="radio" value="experiencias" className="btn-check" name="categoria" id="experiencias" autocomplete="off" {...register("categorias")}/>
-                            <label className="btn btn-outline-success" for="experiencias">Experiencias rurales   <img src="https://cdn.pixabay.com/photo/2015/02/09/20/03/koala-630117__340.jpg" height="50px" width="50px" /></label>
+                            <label className="btn btn-outline-success" for="experiencias">Experiencias rurales   <img src="https://cotopaxi-travel.com/blog/wp-content/uploads/2019/03/comu2.jpeg" height="80px" width="90px" /></label>
                             <br />
                         </div>
                     </div>
-                    <div className='float-end'>
-                        <button type="submit" className="btn btn-warning">Siguiente</button>
+                    <div className='d-flex justify-content-end'>
+                        <button type="submit" className="btn btn-success m-2">Siguiente <i class="fas fa-step-forward"></i></button>
                     </div>
                 </form>
             </div>

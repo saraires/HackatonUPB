@@ -12,10 +12,16 @@ export default function DashboardPage() {
 
   return (
     <div>
-      <h1>Dashboard</h1>
-
       <Link to="welcome">Say Welcome</Link>
-      <Categorias></Categorias>
+      <div className="container">
+      <div className="row">
+        <div className="col-2"></div>
+        <div className="col-8">
+          <Categorias></Categorias>
+        </div>
+        <div className="col-2"></div>
+      </div>
+      </div>
 
       <Outlet />
 
